@@ -14,7 +14,7 @@ resource "aws_instance" "toolserver" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key
-  vpc_security_group_ids = [aws_security_group.sec_grp.id]
+  vpc_security_group_ids = [aws_security_group.sec_grp2.id]
 
   tags = {
     Name = "toolserver"
@@ -23,10 +23,10 @@ resource "aws_instance" "toolserver" {
 }
 
 resource "aws_instance" "toolbox" {
-  ami                    = var.ami_id
+  ami                    = "ami-06fd8a495a537da8b"
   instance_type          = var.instance_type
   key_name               = var.key
-  vpc_security_group_ids = [aws_security_group.sec_grp.id]
+  vpc_security_group_ids = [aws_security_group.sec_grp2.id]
 
   tags = {
     Name = "toolbox1"
@@ -35,7 +35,7 @@ resource "aws_instance" "toolbox" {
 }
 
 resource "aws_instance" "toolbox" {
-  ami                    = var.ami_id
+  ami                    = "ami-06fd8a495a537da8b"
   instance_type          = var.instance_type
   key_name               = var.key
   vpc_security_group_ids = [aws_security_group.sec_grp.id]

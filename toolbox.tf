@@ -17,7 +17,7 @@ resource "aws_instance" "toolserver" {
   vpc_security_group_ids = [aws_security_group.sec_grp2.id]
 
   tags = {
-    Name = "toolserver"
+    Name        = "toolserver"
     Provisioner = "Terraform"
   }
 }
@@ -29,19 +29,19 @@ resource "aws_instance" "toolbox" {
   vpc_security_group_ids = [aws_security_group.sec_grp2.id]
 
   tags = {
-    Name = "toolbox1"
+    Name        = "toolbox1"
     Provisioner = "Terraform"
   }
 }
 
-resource "aws_instance" "toolbox" {
+resource "aws_instance" "toolbox2" {
   ami                    = "ami-06fd8a495a537da8b"
   instance_type          = var.instance_type
   key_name               = var.key
   vpc_security_group_ids = [aws_security_group.sec_grp.id]
 
   tags = {
-    Name = "toolbox2"
+    Name        = "toolbox2"
     Provisioner = "Terraform"
   }
 }
